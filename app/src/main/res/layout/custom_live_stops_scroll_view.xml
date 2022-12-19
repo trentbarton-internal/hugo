@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/live_list_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/live_content_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <!-- Place holder for tool tip -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/live_tool_card_holder_1"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"/>
+
+            <!-- Nearby stops card holder -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/customer_live_nearby_card"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/live_nearby_card_title"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/customer_live_nearby_empty_message"
+                    android:layout_height="wrap_content">
+
+                    <uk.co.trentbarton.hugo.customview.NearbyBusStopList
+                        android:id="@+id/live_nearby_bus_stop_view_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/custom_live_stops_nearby_content_holder"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- End of nearby stops card holder -->
+
+            <!-- Place holder for tool tip -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/live_tool_card_holder_2"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"/>
+
+            <!-- Favourite stops card holder -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/customer_live_favourite_card"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/live_favourite_card_title"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/customer_live_favourite_empty_message"
+                    android:layout_height="wrap_content">
+
+                    <uk.co.trentbarton.hugo.customview.FavouriteBusStopList
+                        android:id="@+id/live_favourite_bus_stop_view_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/custom_live_stops_favourite_content_holder"
+                    android:layout_height="wrap_content"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/customer_live_favourite_add_stops"
+                    android:layout_height="41dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_height="1dp"
+                        android:background="@color/background_light_grey"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/live_favourite_card_add_stops_message"
+                        android:paddingLeft="10dp"
+                        android:paddingStart="10dp"
+                        android:gravity="center"
+                        android:layout_height="40dp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:padding="2dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/plus_icon"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- End of Favourite stops card -->
+
+    </ScrollView>
+</LinearLayout>

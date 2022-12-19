@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/primaryGreen</item>
+        <item name="colorPrimaryDark">@color/primaryDarkGreen</item>
+        <item name="colorAccent">@color/primaryAccent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/pure_white</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+    <style name="ActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ActionBarSubTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="customActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="colorPrimary">@color/pure_white</item>
+        <item name="titleTextStyle">@style/ActionBarTitleText</item>
+        <item name="android:background">@color/pure_white</item>
+        <item name="background">@color/pure_white</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+        <item name="subtitleTextStyle">@style/ActionBarSubTitleText</item>
+    </style>
+
+    <style name="AppActionBarTheme" parent="Theme.AppCompat.Light">
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/primaryGreen</item>
+        <item name="colorPrimaryDark">@color/primaryDarkGreen</item>
+        <item name="colorAccent">@color/primaryAccent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionBarStyle">@style/customActionBar</item>
+        <item name="actionBarStyle">@style/customActionBar</item>
+    </style>
+
+    <style name="customProgress" parent="AppTheme">
+        <item name="colorAccent">@color/primaryDarkGreen</item>
+    </style>
+
+    <style name="widgetProgress" parent="AppTheme">
+        <item name="colorAccent">@color/blue_highlight_text</item>
+    </style>
+
+    <style name="StyledScrollerTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="timePickerTheme" parent="AppTheme">
+        <item name="colorAccent">@color/primaryDarkGreen</item>
+    </style>
+
+</resources>

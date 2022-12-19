@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light_grey"
+    tools:context=".activities.OnBoardingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/white_background_10dp_corners"
+        android:layout_marginRight="10dp"
+        android:id="@+id/mainContentScreen"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:text="Close"
+            android:id="@+id/closeButton"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_highlight_text"
+            android:background="@drawable/white_background_10dp_corners"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/background_light_grey"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingTop="0dp"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text=""
+            android:textSize="14sp"
+            android:id="@+id/object_realtime_card_list_item_stop_name"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:layout_marginEnd="100dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center_vertical"
+            android:layout_height="50dp"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:id="@+id/object_realtime_card_list_item_expand_button"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/down_arrow"
+            android:layout_height="50dp"/>
+
+        <uk.co.trentbarton.hugo.customview.RefreshView
+            android:id="@+id/object_realtime_card_list_item_refresh_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:overViewImage="@drawable/refresh_cut_out"
+            app:refreshColour="@color/blue_refresh"
+            app:spinnerImage="@drawable/refresh_filled_in" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/object_realtime_card_list_item_content_holder"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:layout_height="match_parent">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/onBoardingMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:textColor="@android:color/black"
+        android:id="@+id/onBoardingMapInstructionsView"
+        android:background="@drawable/shadow"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="Tap a bus stop to find out the name and then tap the star to favourite"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/white_background_10dp_corners"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Tap a bus stop to find out the name and then tap the star to favourite"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/onBoardingMapStopMarkerDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:background="@drawable/white_background_10dp_corners"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/onBoardingStopFavouriteIcon"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/favourite_star_unselected" />
+
+            <TextView
+                android:id="@+id/onBoardingStopNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:text="Great Northern Road (opposite)"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/bottom_arrow" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/onBoardingNextArrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:src="@drawable/right_go_arrow"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

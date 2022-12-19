@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:id="@+id/holder"
+        android:background="@drawable/white_background_10dp_corners"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="30dp">
+
+            <TextView
+                android:id="@+id/instructions_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Walk to Spondon Village Hall"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="TRAVEL TIME" />
+
+            <TextView
+                android:id="@+id/travel_time_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:text="1 mins"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/magnifying_glass"
+            android:layout_height="20dp" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/walking_journey_icon"
+        android:layout_alignParentTop="true"
+        android:layout_height="30dp" />
+
+
+
+    <TextView
+        android:layout_width="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/holder"
+        android:background="@color/background_medium_grey"
+        android:layout_height="30dp" />
+
+</RelativeLayout>

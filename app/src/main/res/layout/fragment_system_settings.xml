@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Here is where you'll find settings allowing you to customise how hugo works, we're working on adding new features all the time, feel free to suggest features by submitting feedback"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
+
+    <uk.co.trentbarton.hugo.customview.RadioGroup
+        android:layout_width="match_parent"
+        android:id="@+id/customRadioGroup"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>

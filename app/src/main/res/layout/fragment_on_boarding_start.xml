@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/space1"/>
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/feel_waitless"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:text="Let's find your favourite bus stop so you can start tracking buses from that stop"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="80dp"
+        android:background="@drawable/shadow"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/magnifying_glass"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/onBoardingNameText"
+            android:background="@android:color/transparent"
+            android:hint="search by street or postcode"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_margin="20dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/onBoardingNextArrow"
+        android:src="@drawable/right_go_arrow"/>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/onBoardingStartProgress"
+        android:layout_width="50dp"
+        android:layout_margin="20dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:theme="@style/customProgress"/>
+
+</LinearLayout>

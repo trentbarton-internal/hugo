@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">hugo</string>
+
+    <!-- live screen -->
+    <string name="button_text_filters_applied">Filters applied</string>
+    <string name="live_nearby_card_title">Nearby bus stops</string>
+    <string name="live_nearby_card_empty_message">There are no stops nearby that provide known realtime information.</string>
+    <string name="live_nearby_card_no_gps_message">We don\'t have access to your location to provide this feature, tap the refresh icon to prompt for permission.</string>
+    <string name="live_nearby_card_not_found_location_message">hugo is searching for stops that are close to your current location.</string>
+    <string name="live_favourite_card_title">Your favourite bus stops</string>
+    <string name="live_favourite_card_empty_message">You don\'t currently have any favourite stops set.</string>
+    <string name="live_favourite_card_add_stops_message">Add more stops.</string>
+    <string name="live_zoom_in_message">Zoom in closer to see bus stops</string>
+    <string name="live_no_realtime_for_this_stop">There are currently no departures within the next hour to display.</string>
+
+    <!-- Menu Strings -->
+    <string name="menu_map_title">Maps</string>
+    <string name="menu_option_view_as_map">View on a map</string>
+    <string name="menu_option_delete_message">Delete Message</string>
+
+    <!-- Navigation -->
+    <string name="nav_live">Live times</string>
+    <string name="nav_planner">Plan a trip</string>
+    <string name="nav_alerts">Travel alerts</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="notification_offers_title">offers and promotions</string>
+    <string name="notification_app_title">app notifications</string>
+    <string name="notification_bus_title">bus notifications</string>
+    <string name="notification_traffic_title">traffic notifications</string>
+    <string name="notification_timetable_title">timetable notifications</string>
+    <string name="notification_offers_description">If enabled we may from time to time notify you about really good offers and promotions we have available.</string>
+    <string name="notification_app_description">If enabled we will send notifications to let you know about any issues or upcoming features to the app.</string>
+    <string name="notification_bus_description">If enabled we will let you know about any upcoming changes to services across the East Midlands.</string>
+    <string name="notification_traffic_description">If enabled we will notify you about any serious traffic disruptions and changes to the routes as a result.</string>
+    <string name="notification_timetable_description">If enabled we will notify you of upcoming timetable changes.</string>
+
+    <!-- Message Activity -->
+    <string name="messages_activity_online_link"><u>tap here to go online and get more info</u></string>
+
+    <!-- Dialog messages -->
+    <string name="setting_get_off_alarm_text">this allows hugo to collect location data even when the app is closed or not in use in order to notify you when you approach the selected stop.\n\nhugo will notify you via a notification and alert tone. You can turn it off at any point from the notification bar.</string>
+    <string name="standard_location_request">hugo uses your location data even when the app is closed or not in use to show your closest stops, suggest better places to go to or from when planning a journey and to notify you when to get off the bus if selected.</string>
+
+</resources>

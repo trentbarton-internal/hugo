@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_light_grey"
+    tools:context=".activities.MainNavigationActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Current Journey Card -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/white_background_10dp_corners">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Current journey"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/lineBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/title"
+                    android:background="@color/background_light_grey" />
+
+                <ImageView
+                    android:id="@+id/fragment_settings_journey_user_info"
+                    android:layout_width="80dp"
+                    android:layout_height="39dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:paddingBottom="9dp"
+                    android:paddingLeft="19dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="9dp"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/info" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/lineBreak"
+                    android:layout_height="50dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:visibility="gone"
+                        android:id="@+id/settings_main_current_journey_holder"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:padding="3dp"
+                                android:src="@drawable/marker_green" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:id="@+id/settings_main_journey_from_text"
+                                android:maxLines="1"
+                                android:text="Queens medical centre"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="3dp"
+                                android:padding="3dp"
+                                android:src="@drawable/right_arrow" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:padding="3dp"
+                                android:src="@drawable/marker_red" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="Godfrey Street"
+                                android:id="@+id/settings_main_journey_to_text"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/settings_main_current_journey_action"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:padding="3dp"
+                            android:layout_marginLeft="10dp"
+                            android:src="@drawable/elipses"/>
+                    </LinearLayout>
+
+                <TextView
+                    android:id="@+id/settings_main_empty_journeys_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/lineBreak"
+                    android:gravity="center"
+                    android:text="You don't have any current journeys"
+                    android:visibility="visible" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/white_background_10dp_corners"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="39dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="Alarms"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/fragment_settings_alarms_user_info"
+                        android:layout_width="80dp"
+                        android:layout_height="39dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="9dp"
+                        android:paddingLeft="19dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="9dp"
+                        android:scaleType="fitEnd"
+                        android:src="@drawable/info" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/background_dark_grey"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="NEXT BUS DUE ALARMS"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/settings_main_empty_next_bus_due_alarm_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/lineBreak"
+                    android:gravity="center"
+                    android:text="You don't have any next bus alarms set"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/settings_main_next_bus_alarm"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="15dp"
+                        android:src="@drawable/alarm"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Upper parliament Street U1"
+                        android:id="@+id/settings_main_next_bus_alarm_text"
+                        android:textColor="@android:color/black"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/settings_main_next_bus_alarm_settings"
+                        android:padding="15dp"
+                        android:src="@drawable/elipses"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/settings_main_next_bus_alarms_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/background_dark_grey"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="WHEN TO GET OFF ALARMS"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/settings_main_empty_when_to_get_off_alarm_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="You don't have any alighting alarms set"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/settings_main_when_to_get_off_alarm"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="15dp"
+                        android:src="@drawable/alarm"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Upper parliament Street U1"
+                        android:id="@+id/settings_main_when_to_get_off_alarm_text"
+                        android:textColor="@android:color/black"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/settings_main_when_to_get_off_alarm_settings"
+                        android:padding="15dp"
+                        android:src="@drawable/elipses"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:text="SYSTEM SETTINGS AND NOTIFICATIONS" />
+
+            <!-- Menu top spacer -->
+
+            <!-- SYSTEM SETTINGS & NOTIFICATIONS MENU START -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_dark_grey" />
+
+
+
+            <!-- INTERNAL SPACER -->
+            <LinearLayout
+                android:id="@+id/fragment_settings_messages_button"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/pure_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:src="@drawable/notification_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Notification settings" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="15dp"
+                    android:src="@drawable/right_arrow" />
+
+            </LinearLayout> <!-- SYSTEM SETTINGS & NOTIFICATIONS MENU END -->
+
+            <!-- Menu top spacer -->
+
+
+
+            <!-- Menu top spacer -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/pure_white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/background_dark_grey" />
+            </LinearLayout>
+
+
+            <!-- more MENU START -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/fragment_settings_rate_button"
+                android:background="@color/pure_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:src="@drawable/rate_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Rate hugo" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="15dp"
+                    android:src="@drawable/right_arrow" />
+
+            </LinearLayout>
+
+            <!-- INTERNAL SPACER -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/pure_white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/background_dark_grey" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/fragment_settings_help_improve_button"
+                android:background="@color/pure_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:src="@drawable/help_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Help improve hugo" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="15dp"
+                    android:src="@drawable/right_arrow" />
+
+            </LinearLayout>
+
+            <!-- INTERNAL SPACER -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/pure_white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/background_dark_grey" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/fragment_settings_privacy_policy_button"
+                android:background="@color/pure_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:src="@drawable/privacy_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Privacy policy" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="15dp"
+                    android:src="@drawable/right_arrow" />
+
+            </LinearLayout>
+
+            <!-- INTERNAL SPACER -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/pure_white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/background_dark_grey" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/fragment_settings_contact_us_button"
+                android:background="@color/pure_white"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="10dp"
+                    android:src="@drawable/contact_icon" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Contact us" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="15dp"
+                    android:src="@drawable/right_arrow" />
+
+            </LinearLayout> <!-- SYSTEM SETTINGS & NOTIFICATIONS MENU END -->
+
+            <!-- Menu top spacer -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_dark_grey" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <uk.co.trentbarton.hugo.customview.SlideUpMenu.SlideUpMenu
+        android:id="@+id/settings_slide_up_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
+

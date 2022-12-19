@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.StopSearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:id="@+id/searchBox"
+        android:background="@drawable/light_grey_background_10dp_corners"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@drawable/magnifying_glass"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="Search"
+            android:id="@+id/act_stop_search_text"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:id="@+id/act_stop_search_stopList"
+        android:dividerHeight="1dp"
+        android:layout_below="@id/searchBox"
+        android:layout_alignParentBottom="true"
+        android:divider="@color/background_light_grey"
+        android:layout_height="0dp"/>
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:visibility="gone"
+        android:id="@+id/act_stop_search_progress"
+        android:indeterminate="true"
+        android:theme="@style/customProgress"
+        android:layout_centerInParent="true"
+        android:layout_height="50dp"/>
+
+</RelativeLayout>

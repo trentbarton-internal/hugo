@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryGreen">#00c853</color>
+    <color name="primaryDarkGreen">#12bc53</color>
+    <color name="primaryAccent">#48ea8c</color>
+    <color name="alertNumberBackground">#afffc1</color>
+    <color name="alertNumberForeground">#179332</color>
+    <color name="background_light_grey">#e3e3e3</color>
+    <color name="background_medium_grey">#c3c3c3</color>
+    <color name="background_dark_grey">#8c8c8c</color>
+    <color name="nav_text_dark_grey">#36393f</color>
+    <color name="nav_text_light_grey">#cccccc</color>
+    <color name="blue_highlight_text">#2a86ff</color>
+    <color name="blue_refresh">#51dfff</color>
+    <color name="blue_text_colour">#5ac8ff</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="star_yellow">#ffcd06</color>
+    <color name="severityForeground1">#ffa834</color>
+    <color name="severityForeground2">#ff6713</color>
+    <color name="severityForeground3">#d0101f</color>
+    <color name="severityBackground1">#fce5a6</color>
+    <color name="severityBackground2">#fccea6</color>
+    <color name="severityBackground3">#fca6a6</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+</resources>

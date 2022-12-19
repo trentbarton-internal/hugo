@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/notification_offers_title"
+        android:summary="@string/notification_offers_description"
+        android:title="@string/notification_offers_title"/>
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/notification_app_title"
+        android:summary="@string/notification_app_description"
+        android:title="@string/notification_app_title" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/notification_bus_title"
+        android:summary="@string/notification_bus_description"
+        android:title="@string/notification_bus_title" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/notification_traffic_title"
+        android:summary="@string/notification_traffic_description"
+        android:title="@string/notification_traffic_title"/>
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/notification_timetable_title"
+        android:summary="@string/notification_timetable_description"
+        android:title="@string/notification_timetable_title"/>
+
+</PreferenceScreen>

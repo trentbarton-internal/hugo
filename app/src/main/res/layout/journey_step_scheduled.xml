@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:id="@+id/holder"
+        android:background="@drawable/white_background_10dp_corners"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/topInfo"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="30dp">
+
+            <TextView
+                android:id="@+id/instructions_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="CATCH"
+                android:textSize="18sp" />
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_height="25dp">
+
+                <ImageView
+                    android:id="@+id/busColourIndicator"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@color/blue_highlight_text"
+                    android:src="@drawable/circle_cover" />
+
+                <TextView
+                    android:id="@+id/service_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:text="ilkeston flyer"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/destination_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="TOWARDS COTMANHAY"
+                android:textAllCaps="true"
+                android:textSize="18sp" />
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:id="@+id/mangoHolder"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:src="@drawable/green_tick"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:text="mango"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/seperator"
+            android:layout_below="@id/topInfo"
+            android:layout_marginTop="10dp"
+            android:background="@color/background_medium_grey"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomInfo"
+            android:layout_below="@id/seperator"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="10dp">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="SCHEDULED AT"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/scheduledTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:text="09:45am"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_above="@id/seperator"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/magnifying_glass"
+                android:layout_height="20dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/bus_journey_icon"
+        android:layout_alignParentTop="true"
+        android:layout_height="30dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/holder"
+        android:layout_height="90dp">
+
+        <TextView
+            android:layout_width="2dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/background_medium_grey"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="8dp"
+            android:background="@drawable/dark_grey_background_10dp_corners"
+            android:layout_centerInParent="true"
+            android:id="@+id/centrePoint"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/sit_back_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/centrePoint"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="SIT BACK AND RELAX FOR AROUND 25 MINS"
+            android:textAllCaps="true" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

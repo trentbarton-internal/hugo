@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RefreshView">
+        <attr name="refreshColour" format="color"/>
+        <attr name="overViewImage" format="reference"/>
+        <attr name="spinnerImage" format="reference"/>
+        <attr name="backgroundImage" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+
+</resources>

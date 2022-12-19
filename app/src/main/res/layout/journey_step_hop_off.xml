@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:id="@+id/holder"
+        android:background="@drawable/white_background_10dp_corners"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="30dp">
+
+            <TextView
+                android:id="@+id/instructions_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="hop off at Sitwell Street"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tellMeWhenToGetOffButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="tell me when to get off"
+                android:textColor="@color/blue_highlight_text" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/magnifying_glass"
+            android:layout_height="20dp" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/bus_stop_journey_icon"
+        android:layout_alignParentTop="true"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:layout_width="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/holder"
+        android:background="@color/background_medium_grey"
+        android:layout_height="30dp" />
+
+</RelativeLayout>

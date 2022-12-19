@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="175dp"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    android:background="@android:color/transparent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/white_background_10dp_corners"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:padding="5dp"
+                android:id="@+id/live_dialog_favourite_icon"
+                android:src="@drawable/favourite_star_unselected"
+                android:layout_height="30dp" />
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/live_dialog_stop_name_text"
+                android:textColor="@android:color/black"
+                android:padding="5dp"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:id="@+id/live_dialog_stop_info_enter"
+                android:padding="5dp"
+                android:src="@drawable/right_arrow"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="30dp"
+            android:gravity="center"
+            android:id="@+id/live_dialog_empty_message"
+            android:visibility="gone"
+            android:text="@string/live_no_realtime_for_this_stop"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:id="@+id/live_dialog_empty_progress_bar"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:indeterminate="true"
+            android:layout_gravity="center"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/live_dialog_content_holder"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/live_dialog_filters_applied"
+            android:layout_height="25dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:textAlignment="textEnd"
+                android:gravity="end"
+                android:textColor="#4d4d4d"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:text="Filters applied"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/filter_grey"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/bottom_arrow"
+        android:background="@android:color/transparent"
+        android:layout_height="20dp" />
+
+</LinearLayout>

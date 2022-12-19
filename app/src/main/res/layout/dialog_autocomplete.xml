@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/white_background_10dp_corners"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:paddingLeft="25dp"
+        android:id="@+id/dialog_user_input_text"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@drawable/shadow"
+        android:paddingRight="25dp"
+        android:textSize="15sp"
+        android:height="50dp"
+        android:hint="Start typing place name here"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/dialog_autocomplete_places"
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/dialog_progress_autocomplete"
+            android:padding="120dp"
+            android:visibility="gone"
+            android:theme="@style/customProgress"/>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="40dp">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_alignParentRight="true"
+            android:text="Close"
+            android:id="@+id/dialog_accept_button"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white"
+            android:background="@drawable/dark_green_background_10dp_corners"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

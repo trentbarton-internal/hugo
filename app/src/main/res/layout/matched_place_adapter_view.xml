@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:padding="5dp"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:id="@+id/favouriteIndicatorProgress"
+        android:layout_height="50dp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:id="@+id/favouriteIndicator"
+        android:src="@drawable/favourite_star_unselected"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/favouriteIndicator"
+        android:paddingLeft="10dp"
+        android:orientation="vertical"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test Data"
+            android:id="@+id/matchedPlaceName"
+            android:maxLines="1"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:id="@+id/matchedPlaceLocality"
+            android:textSize="13sp"
+            android:textColor="@color/background_light_grey"
+            android:text="Kirkby-in-ashfield"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/arrows"
+        android:scaleType="centerInside"
+        android:id="@+id/poweredLogo"
+        android:visibility="invisible"
+        android:layout_height="match_parent">
+    </ImageView>
+
+
+</RelativeLayout>

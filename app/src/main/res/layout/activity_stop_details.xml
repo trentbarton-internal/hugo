@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.StopDetailsActivity"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/swipeLayout"
+        android:layout_marginBottom="50dp"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/activity_stop_details_list"
+            android:layout_height="match_parent"/>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/minutePickerHolder"
+        android:visibility="gone"
+        android:background="@color/pure_white"
+        android:layout_marginBottom="50dp"
+        android:layout_height="match_parent">
+
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:id="@+id/minutePicker"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:showDividers="none"
+            android:background="@color/pure_white"
+            android:layout_marginLeft="100dp"
+            android:layout_height="wrap_content">
+
+        </NumberPicker>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="mins away from this stop"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/minutePicker"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/fade_out_top"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="5dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomAcceptCancelBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="501">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="250"
+            android:layout_height="match_parent"
+            android:text="Cancel"
+            android:id="@+id/bottomAcceptCancelBarCancelButton"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/blue_highlight_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/background_medium_grey"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="250"
+            android:layout_height="match_parent"
+            android:text="Set time"
+            android:id="@+id/bottomAcceptCancelBarAcceptButton"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/blue_highlight_text"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/stop_details_favourite_button"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:padding="2dp"
+                android:src="@drawable/favourite_star_unselected"
+                android:id="@+id/stop_details_favourite_icon"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Favourite"
+                android:id="@+id/stop_details_favourite_text"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/stop_details_plan_button"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:padding="2dp"
+                android:src="@drawable/nav_journey_dark_grey"
+                android:id="@+id/stop_details_plan_icon"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Plan"
+                android:id="@+id/stop_details_plan_text"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/stop_details_alarm_button"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/alarm_grey"
+                android:padding="2dp"
+                android:id="@+id/stop_details_alarm_icon"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Set alarm"
+                android:id="@+id/stop_details_alarm_text"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/stop_details_filter_button"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/filter_grey"
+                android:padding="2dp"
+                android:id="@+id/stop_details_filter_icon"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Filter results"
+                android:id="@+id/stop_details_filter_text"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/stop_details_loading_screen"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_centerInParent="true"
+            android:theme="@style/customProgress"
+            android:layout_height="60dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/stop_details_alarm_set_screen"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_centerInParent="true"
+            android:alpha="0.4"
+            android:background="@drawable/light_grey_background_10dp_corners"
+            android:layout_height="200dp"/>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/plain_green_tick"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Alarm set"
+                android:textSize="18sp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/stop_details_alarm_removed_screen"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_centerInParent="true"
+            android:alpha="0.4"
+            android:background="@drawable/light_grey_background_10dp_corners"
+            android:layout_height="200dp"/>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/plain_grey_tick"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Alarm removed"
+                android:textSize="18sp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <uk.co.trentbarton.hugo.customview.SlideUpMenu.SlideUpMenu
+        android:layout_width="match_parent"
+        android:id="@+id/activity_stop_details_slide_up_menu"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

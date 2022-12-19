@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/white_background_10dp_corners"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/dialog_title_text"
+        android:layout_marginBottom="20dp"
+        android:text="hugo has something to say..."
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:scaleType="fitCenter"
+        android:id="@+id/dialog_image"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/widget_preview"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:id="@+id/dialog_user_input_text"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingRight="10dp"
+        android:textSize="15sp"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="40dp">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_alignParentRight="true"
+            android:text="yes"
+            android:id="@+id/dialog_accept_button"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white"
+            android:background="@drawable/dark_green_background_10dp_corners"
+            android:layout_height="40dp" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_alignParentLeft="true"
+            android:text="Cancel"
+            android:id="@+id/dialog_cancel_button"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white"
+            android:background="@drawable/dark_grey_background_10dp_corners"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

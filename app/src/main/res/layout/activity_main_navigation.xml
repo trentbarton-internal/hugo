@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:id="@+id/main_nav_live_button"
+                android:src="@drawable/nav_live_grey"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="@string/nav_live"
+                android:textColor="@color/nav_text_light_grey"
+                android:id="@+id/main_nav_live_text"
+                android:textSize="12sp"
+                android:padding="1dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/main_nav_journey_button"
+                android:padding="5dp"
+                android:src="@drawable/nav_journey_grey"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="@string/nav_planner"
+                android:textColor="@color/nav_text_light_grey"
+                android:id="@+id/main_nav_journey_text"
+                android:textSize="12sp"
+                android:padding="1dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/main_nav_alerts_button"
+                    android:padding="5dp"
+                    android:src="@drawable/nav_alerts_grey"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:text="@string/nav_alerts"
+                    android:textColor="@color/nav_text_light_grey"
+                    android:id="@+id/main_nav_alerts_text"
+                    android:textSize="12sp"
+                    android:padding="1dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_height="25dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/red_background_corners"
+                        android:minHeight="20dp"
+                        android:minWidth="20dp"
+                        android:padding="2dp"
+                        android:text="4"
+                        android:id="@+id/main_nav_alerts_peek_notification"
+                        android:layout_gravity="bottom"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:id="@+id/main_nav_settings_button"
+                android:src="@drawable/nav_settings_grey"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:textColor="@color/nav_text_light_grey"
+                android:text="@string/nav_settings"
+                android:id="@+id/main_nav_settings_text"
+                android:textSize="12sp"
+                android:padding="1dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/main_nav_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_alignParentTop="true"
+            android:clickable="false"
+            android:background="@drawable/fade_out_bottom"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

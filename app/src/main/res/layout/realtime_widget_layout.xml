@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/testWidget"
+    android:background="@color/pure_white"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/header_bar"
+        android:orientation="horizontal"
+        android:background="@color/blue_highlight_text"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:padding="5dp"
+            android:contentDescription="Back Button to change stops"
+            android:id="@+id/widgetBackButton"
+            android:src="@drawable/widget_back_button"
+            android:layout_height="60dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="60dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/pure_white"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:id="@+id/widgetStopText"
+                android:text=""
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/pure_white"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:id="@+id/widgetLastUpdatedText"
+                android:text=""
+                android:layout_height="20dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:padding="5dp"
+            android:id="@+id/widgetRefreshButton"
+            android:contentDescription="Refresh button to refresh data"
+            android:src="@drawable/refresh_arrow"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:padding="5dp"
+            android:id="@+id/widgetNextButton"
+            android:contentDescription="Forward Button to change stops"
+            android:src="@drawable/widget_next_button"
+            android:layout_height="60dp"/>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/header_bar"
+        android:background="@color/pure_white"
+        android:divider="@color/background_medium_grey"
+        android:dividerHeight="2px"
+        android:layout_height="0dp"
+        android:id="@+id/widgetResultsList"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/widgetRefreshingView"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/header_bar"
+        android:background="@color/pure_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:theme="@style/widgetProgress"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/background_dark_grey"
+                android:text="Refreshing..." />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_below="@id/header_bar"
+        android:visibility="gone"
+        android:id="@+id/widgetNoDeparturesView"
+        android:padding="40dp"
+        android:textColor="@color/background_dark_grey"
+        android:background="@color/pure_white"
+        android:text="There are no departures within the next hour."
+        android:layout_alignParentBottom="true"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/widgetNoFavouritesView"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_below="@id/header_bar"
+        android:textColor="@color/background_dark_grey"
+        android:background="@color/pure_white"
+        android:padding="40dp"
+        android:text="You don't have any favourites set, open hugo and set favourite stops to see them here."
+        android:layout_alignParentBottom="true"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/widgetNoNetworkView"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_below="@id/header_bar"
+        android:textColor="@color/background_dark_grey"
+        android:background="@color/pure_white"
+        android:padding="40dp"
+        android:text="There's no data to display, hit the refresh icon above to get new data."
+        android:layout_alignParentBottom="true"
+        android:layout_height="0dp" />
+
+</RelativeLayout>

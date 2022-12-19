@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/white_background_10dp_corners"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/fastestBanner"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/fastest_journey_background"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Fastest journey"
+        android:textColor="@color/pure_white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="TRAVEL TIME" />
+
+            <TextView
+                android:id="@+id/dueInHeader"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical|end"
+                android:text="DUE IN" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/travelTimeInMins"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="23 mins"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/DueInMins"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="bottom"
+                android:text="32 mins"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/liveSymbol"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_toLeftOf="@id/DueInMins"
+                android:src="@drawable/nav_live_blue" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/journeyDetailsHolder"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_light_grey"/>
+
+            <LinearLayout
+                android:id="@+id/disruptionBanner"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp">
+
+                <ImageView
+                    android:id="@+id/disruptionIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/alerts_icon_red_background" />
+
+                <TextView
+                    android:id="@+id/disruptionTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Test disruption, please ignore!! Lorem ipsum vbfshv fvb svs vs v sbvbsf vs v sdbjv sdbj vjbs vbs JV SJBV s vjBS VBSDVSDBv svbfHBVBSVSFVs vbshvfsNV SBVHS Vsbvs   VSFbvhsfv SVBSv sb vhjfs VSB  VSBVS vsBHVBDS vsbvhsbV SBVSbv svb sh VJBSbhvbds vbjsBVHDSBv sbvhj\n\n vsdhvbshbvshBVhsv SVBSFHBV v\n\nNewline\n\n The end..." />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/magnifying_glass" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_light_grey"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/arriveAtTime"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="arrive at 10:37pm"
+                    android:textSize="12sp" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:id="@+id/mangoHolder"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:background="@color/background_light_grey" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal"
+                        android:layout_height="30dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:src="@drawable/green_tick"
+                            android:layout_height="20dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="mango"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:paddingLeft="5dp"
+                            android:layout_height="match_parent" />
+
+
+                    </LinearLayout>
+
+
+
+                    <TextView
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/background_light_grey" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/leaveInMins"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:text="leave in 4 mins"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

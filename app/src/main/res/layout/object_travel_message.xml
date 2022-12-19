@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <TextView
+        android:layout_width="8dp"
+        android:id="@+id/obj_message_new_dot"
+        android:layout_margin="3dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/red_background_corners"
+        android:layout_height="8dp" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_toRightOf="@id/obj_message_new_dot"
+        android:id="@+id/obj_message_icon"
+        android:layout_marginRight="6dp"
+        android:src="@drawable/alerts_icon_red_background"
+        android:layout_height="70dp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:padding="5dp"
+        android:id="@+id/obj_message_arrow"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/right_arrow"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:padding="1dp"
+        android:id="@+id/obj_message_title_holder"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@id/obj_message_icon"
+        android:layout_toLeftOf="@id/obj_message_arrow"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/obj_message_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:text="Travel Title"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/obj_message_date_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="bottom|end"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="Today"
+            android:textAlignment="viewEnd" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/obj_message_content_text"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/obj_message_title_holder"
+        android:layout_toLeftOf="@id/obj_message_arrow"
+        android:layout_toRightOf="@id/obj_message_icon"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="2"
+        android:padding="1dp"
+        android:scrollHorizontally="false"
+        android:text="Up to two lines of additional text to help summarise the travel alert for the reader this n hf gn this is line 3 and another line etc etc etc"
+        android:textSize="12sp" />
+
+</RelativeLayout>

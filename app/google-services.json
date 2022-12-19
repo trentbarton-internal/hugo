@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "902241397172",
+    "firebase_url": "https://hugo-153115.firebaseio.com",
+    "project_id": "hugo-153115",
+    "storage_bucket": "hugo-153115.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902241397172:android:be3d6faa79208ea4",
+        "android_client_info": {
+          "package_name": "uk.co.trentbarton.hugo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902241397172-evoqfakl6mvu9k71irrovqpoj34cq9f0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.co.trentbarton.hugo",
+            "certificate_hash": "34ed60b50690d47d3f7ed203077375d45fc896a6"
+          }
+        },
+        {
+          "client_id": "902241397172-cc2iv7gdedsdu4j352hicjilfmi7a992.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.co.trentbarton.hugo",
+            "certificate_hash": "13d90ff60201a4a0866ba4229701640a891ae964"
+          }
+        },
+        {
+          "client_id": "902241397172-ufe7b1tih267n61h8mld739uceob94jc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxYQAVYs_LBpYizA8G_tGkBjtDHpCuE_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113859838640404772842",
+              "client_type": 3
+            },
+            {
+              "client_id": "902241397172-tddmqpgrbu2d7q5aihfjn8ut373mr6cj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.trentbarton.hugo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

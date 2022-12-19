@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/background_light_grey"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:text="How can we improve hugo?"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:minHeight="150dp"
+                android:gravity="top"
+                android:padding="8dp"
+                android:hint="Please use this space to tell us how we can improve"
+                android:maxLines="200"
+                android:id="@+id/improvements"
+                android:maxLength="5000"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="What bits do you like?"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:minHeight="150dp"
+                android:gravity="top"
+                android:padding="8dp"
+                android:hint="Please use this space to tell us what bits you like about hugo"
+                android:maxLines="200"
+                android:id="@+id/bitsLiked"
+                android:maxLength="5000"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="What bits don't you like?"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:minHeight="150dp"
+                android:maxLines="200"
+                android:id="@+id/bitsDisliked"
+                android:gravity="top"
+                android:padding="8dp"
+                android:hint="Please use this space to tell us about any bits you don't like about hugo"
+                android:maxLength="5000"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:paddingLeft="8dp"
+                    android:text="Please rate the following..."
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:text="Look and feel" />
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/lookAndFeelRating"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        app:srb_numStars="5"
+                        app:srb_minimumStars="1"
+                        app:srb_rating="3"
+                        app:srb_starWidth="20dp"
+                        app:srb_starHeight="20dp"
+                        app:srb_starPadding="5dp"
+                        app:srb_stepSize="1.0"
+                        app:srb_isIndicator="false"
+                        app:srb_clickable="true"
+                        app:srb_scrollable="true"
+                        app:srb_clearRatingEnabled="true"
+                        app:srb_drawableEmpty="@drawable/favourite_star_unselected"
+                        app:srb_drawableFilled="@drawable/favourite_star_selected"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Ease of use"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/easeOfUseRating"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        app:srb_numStars="5"
+                        app:srb_minimumStars="1"
+                        app:srb_rating="3"
+                        app:srb_starWidth="20dp"
+                        app:srb_starHeight="20dp"
+                        app:srb_starPadding="5dp"
+                        app:srb_stepSize="1.0"
+                        app:srb_isIndicator="false"
+                        app:srb_clickable="true"
+                        app:srb_scrollable="true"
+                        app:srb_clearRatingEnabled="true"
+                        app:srb_drawableEmpty="@drawable/favourite_star_unselected"
+                        app:srb_drawableFilled="@drawable/favourite_star_selected"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Features"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/featuresRating"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        app:srb_numStars="5"
+                        app:srb_minimumStars="1"
+                        app:srb_rating="3"
+                        app:srb_starWidth="20dp"
+                        app:srb_starHeight="20dp"
+                        app:srb_starPadding="5dp"
+                        app:srb_stepSize="1.0"
+                        app:srb_isIndicator="false"
+                        app:srb_clickable="true"
+                        app:srb_scrollable="true"
+                        app:srb_clearRatingEnabled="true"
+                        app:srb_drawableEmpty="@drawable/favourite_star_unselected"
+                        app:srb_drawableFilled="@drawable/favourite_star_selected"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_background_10dp_corners"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:paddingLeft="8dp"
+                    android:text="How often do you use hugo"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/everyJourneyButton"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="For every journey"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/everyJourneyIcon"
+                        android:src="@drawable/green_tick" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:id="@+id/mostJourneyButton"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="For most journeys"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/mostJourneyIcon"
+                        android:src="@drawable/unselected_icon" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/someJourneyButton"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="For some journeys"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/someJourneyIcon"
+                        android:src="@drawable/unselected_icon" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/hardlyAnyJourneyButton"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="For hardly any journeys"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/hardlyAnyJourneyIcon"
+                        android:src="@drawable/unselected_icon" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="1dp"
+                    android:background="@color/background_light_grey"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/noJourneyButton"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="I never use it"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/noJourneyIcon"
+                        android:src="@drawable/unselected_icon" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="50dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:text="Send feedback"
+                    android:id="@+id/sendFeedbackButton"
+                    android:textColor="@color/pure_white"
+                    android:textAllCaps="false"
+                    android:background="@drawable/dark_green_background_10dp_corners"
+                    android:layout_height="match_parent" />
+
+                <ProgressBar
+                    android:layout_width="50dp"
+                    android:id="@+id/feedbackProgress"
+                    android:layout_height="50dp"
+                    android:visibility="gone"
+                    android:indeterminate="true"
+                    android:elevation="10dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <uk.co.trentbarton.hugo.customview.SlideUpMenu.SlideUpMenu
+        android:layout_width="match_parent"
+        android:id="@+id/slidingMenu"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

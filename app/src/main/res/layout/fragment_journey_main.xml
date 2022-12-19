@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/pure_white"
+        android:id="@+id/fragment_journey_list_slider"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:id="@+id/fromToHeader"
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:background="@color/pure_white"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/map_icon"
+                android:id="@+id/place_enter_switch_state_button"
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@id/place_enter_switch_state_button"
+                android:id="@+id/fromLocationHolder"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/light_grey_background_10dp_corners"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/marker_green"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/fromPlaceText"
+                    android:layout_width="0dp"
+                    android:inputType="text"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="Where are you travelling from?"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/delete_icon"
+                    android:visibility="gone"
+                    android:id="@+id/fromPlaceTextDelete"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/toLocationHolder"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/fromLocationHolder"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/light_grey_background_10dp_corners"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/marker_red"
+                    android:padding="5dp"/>
+
+                <EditText
+                    android:id="@+id/toPlaceText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center_vertical"
+                    android:hint="Where do you want to go?"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:src="@drawable/delete_icon"
+                    android:id="@+id/toPlaceTextDelete"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:id="@+id/switch_icon"
+                android:layout_marginTop="65dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/switch_icon"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/toLocationHolder"
+                android:background="@color/background_dark_grey"/>
+
+        </RelativeLayout>
+
+        <com.google.android.gms.maps.MapView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/fromToHeader"
+            android:id="@+id/main_map" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/fromToHeader"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:background="@color/pure_white"
+            android:id="@+id/placeSearchResultsListHolder"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/journey_main_list_hint_text"
+                android:padding="40dp"
+                android:gravity="center"
+                android:text="Tap on either the from or to boxes and type to see suggestions here or use the map button to interact with a Google map."
+                android:layout_height="match_parent" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:background="@color/pure_white"
+                android:id="@+id/placeSearchResultsList"
+                android:layout_height="match_parent">
+            </ListView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/journeyGoButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:background="@drawable/dark_green_background_10dp_corners"
+            android:text="lets go"
+            android:textAllCaps="false"
+            android:textColor="@color/pure_white" />
+
+
+
+    </RelativeLayout>
+
+    <uk.co.trentbarton.hugo.customview.SlideUpMenu.SlideUpMenu
+        android:id="@+id/fragment_journey_slide_up_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/loading_screen"
+        android:visibility="gone"
+        android:background="@color/background_light_grey"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:id="@+id/loadingGifHolder"
+            android:layout_centerInParent="true"
+            android:layout_height="100dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
