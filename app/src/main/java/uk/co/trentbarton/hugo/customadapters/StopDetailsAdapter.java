@@ -2,6 +2,7 @@ package uk.co.trentbarton.hugo.customadapters;
 
 import android.content.Context;
 import androidx.annotation.Nullable;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,6 +97,16 @@ public class StopDetailsAdapter extends ArrayAdapter<RealtimePrediction> {
         viewHolder.serviceColour.setBackgroundColor(prediction.getServiceColour());
         viewHolder.predictionDisplay.setText(prediction.getFormattedPredictionDisplay());
         // Return the completed view to render on screen
+
+        if(prediction.isCancelledService()){
+            viewHolder.serviceDestination.setText("cancelled");
+            viewHolder.serviceDestination.setTextColor(Color.parseColor("#FF0000"));
+            viewHolder.predictionDisplay.setTextColor(Color.parseColor("#FF0000"));
+        }else{
+            viewHolder.serviceDestination.setText("to " + prediction.getJourneyDestination());
+            viewHolder.serviceDestination.setTextColor(Color.parseColor("#000000"));
+            viewHolder.predictionDisplay.setTextColor(Color.parseColor("#000000"));
+        }
 
         if(mIsInSelectionMode){
             if(mSelectedPosition == position){

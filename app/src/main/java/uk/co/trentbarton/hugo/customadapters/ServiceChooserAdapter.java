@@ -1,92 +1,84 @@
 package uk.co.trentbarton.hugo.customadapters;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.futuremind.recyclerviewfastscroll.SectionTitleProvider;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.List;
 
+import uk.co.trentbarton.hugo.R;
 import uk.co.trentbarton.hugo.dataholders.Service;
 import uk.co.trentbarton.hugo.interfaces.OnServiceItemClickListener;
-import uk.co.trentbarton.hugo.R;
 
-public class ServiceChooserAdapter extends RecyclerView.Adapter<ServiceChooserAdapter.MyViewHolder>  implements SectionTitleProvider {
+public class ServiceChooserAdapter extends ArrayAdapter<Service> {
 
-    private List<Service> serviceList;
+    Context mContext;
+    List<Service> mServices;
     private OnServiceItemClickListener mListener;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView serviceName, operatorName;
-        public ImageView serviceColour, selectedIcon;
-
-        public MyViewHolder(View view) {
-            super(view);
-            serviceName = view.findViewById(R.id.serviceName);
-            serviceColour = view.findViewById(R.id.serviceColour);
-            selectedIcon = view.findViewById(R.id.selectedIcon);
-            operatorName = view.findViewById(R.id.operatorName);
-        }
-
-        public void bind(final Service item, final int position, final OnServiceItemClickListener listener) {
-            itemView.setOnClickListener(v -> {
-                if(listener != null){
-                    listener.onItemClicked(position, item);
-                }
-            });
-        }
-
+    public ServiceChooserAdapter(@NonNull Context context, @NonNull List<Service> objects) {
+        super(context, 0, objects);
+        mServices = objects;
+        mContext = context;
     }
 
-    public ServiceChooserAdapter(List<Service> serviceList) {
-        this.serviceList = serviceList;
+    @Nullable
+    @Override
+    public Service getItem(int position) {
+        return super.getItem(position);
     }
 
     public void setOnServiceClickedListener(OnServiceItemClickListener listener){
         mListener = listener;
     }
 
-    @Override
-    public String getSectionTitle(int position) {
-        return serviceList.get(position).getServiceName().substring(0,1).toUpperCase();
-    }
-
-
-    @NonNull
-    @Override
-    public ServiceChooserAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.choose_service_item, parent, false);
-
-        return new MyViewHolder(itemView);
+    static class ViewHolder {
+        public TextView serviceName, operatorName;
+        public ImageView serviceColour, selectedIcon;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ServiceChooserAdapter.MyViewHolder holder, int position) {
-        Service service = serviceList.get(position);
-        holder.serviceName.setText(service.getServiceName());
-        holder.operatorName.setText(service.getOperator());
-        holder.serviceColour.setBackgroundColor(service.getServiceColour());
+    public View getView(int position, View view, ViewGroup parent) {
+        // Get the data item for this position
+        Service service = getItem(position);
+        // Check if an existing view is being reused, otherwise inflate the view
+        ServiceChooserAdapter.ViewHolder viewHolder; // view lookup cache stored in tag
+        if (view == null) {
+            // If there's no view to re-use, inflate a brand new view for row
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            view = inflater.inflate(R.layout.choose_service_item, parent, false);
+
+            viewHolder = new ServiceChooserAdapter.ViewHolder();
+            viewHolder.serviceName = view.findViewById(R.id.serviceName);
+            viewHolder.serviceColour = view.findViewById(R.id.serviceColour);
+            viewHolder.selectedIcon = view.findViewById(R.id.selectedIcon);
+            viewHolder.operatorName = view.findViewById(R.id.operatorName);
+            // Cache the viewHolder object inside the fresh view
+            view.setTag(viewHolder);
+        } else {
+            // View is being recycled, retrieve the viewHolder object from tag
+            viewHolder = (ServiceChooserAdapter.ViewHolder) view.getTag();
+        }
+        assert service != null;
+        viewHolder.serviceName.setText(service.getServiceName());
+        viewHolder.operatorName.setText(service.getOperator());
+        viewHolder.serviceColour.setBackgroundColor(service.getServiceColour());
 
         if(service.isSubscribed()){
-            holder.selectedIcon.setImageResource(R.drawable.green_tick);
+            viewHolder.selectedIcon.setImageResource(R.drawable.green_tick);
         }else{
-            holder.selectedIcon.setImageResource(R.drawable.unselected_icon);
+            viewHolder.selectedIcon.setImageResource(R.drawable.unselected_icon);
         }
 
-        holder.bind(serviceList.get(position), position, mListener);
+        view.setOnClickListener(view1 -> mListener.onItemClicked(position, getItem(position)));
+
+        return view;
     }
-
-    @Override
-    public int getItemCount() {
-        return serviceList.size();
-    }
-
-
-
 }

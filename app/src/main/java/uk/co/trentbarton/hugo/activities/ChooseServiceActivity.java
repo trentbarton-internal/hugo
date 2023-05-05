@@ -4,18 +4,16 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.futuremind.recyclerviewfastscroll.FastScroller;
 import com.google.firebase.messaging.FirebaseMessaging;
+
 import java.util.ArrayList;
 import java.util.List;
 import uk.co.trentbarton.hugo.customadapters.ServiceChooserAdapter;
@@ -28,8 +26,7 @@ import uk.co.trentbarton.hugo.R;
 
 public class ChooseServiceActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
-    RecyclerView recyclerView;
-    FastScroller fastScroller;
+    ListView serviceListView;
     ServiceChooserAdapter mAdapter;
     RelativeLayout refreshingLayout;
     TextView errorMessage;
@@ -135,21 +132,15 @@ public class ChooseServiceActivity extends AppCompatActivity implements SearchVi
 
         filteredServices = new ArrayList<>();
         fullServices = new ArrayList<>();
-        mAdapter = new ServiceChooserAdapter(filteredServices);
-        recyclerView = findViewById(R.id.recyclerview);
-        fastScroller = findViewById(R.id.fastscroll);
+        mAdapter = new ServiceChooserAdapter(this, filteredServices);
+        serviceListView = findViewById(R.id.service_list_view);
         refreshingLayout = findViewById(R.id.refreshingLayout);
         errorMessage = findViewById(R.id.errorMessage);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(mAdapter);
-
-        //has to be called AFTER RecyclerView.setAdapter()
-        fastScroller.setRecyclerView(recyclerView);
-
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-        recyclerView.addItemDecoration(dividerItemDecoration);
-
+        serviceListView.setAdapter(mAdapter);
+        mAdapter.setOnServiceClickedListener((position, item) -> {
+            item.setSubscribed(!item.isSubscribed());
+            mAdapter.notifyDataSetChanged();
+        });
     }
 
     @SuppressLint("NotifyDataSetChanged")

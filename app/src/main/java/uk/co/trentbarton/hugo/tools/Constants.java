@@ -20,7 +20,7 @@ public class Constants {
 
     //public static final String HUGO_API_URL = "https://apps.trentbarton.co.uk/Hugo/version3/index.php";
     //TODO - ONLY USE FOR TESTING
-    public static final String HUGO_API_URL = "https://apps.trentbarton.co.uk/Hugo/version3/index.php"; //Testing only
+    public static final String HUGO_API_URL = "https://apps.trentbarton.co.uk/Hugo/version5/index.php"; //Testing only
     public static final String OPERATING_SYSTEM = "Android";
     public static final LatLng SOUTH_WEST_MAP_CORNER = new LatLng(52.597118,-1.735656);
     public static final LatLng NORTH_EAST_MAP_CORNER = new LatLng(53.275800,-0.794952);

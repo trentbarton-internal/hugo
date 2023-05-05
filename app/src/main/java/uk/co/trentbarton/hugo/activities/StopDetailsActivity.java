@@ -29,9 +29,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.installations.FirebaseInstallations;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -173,6 +171,15 @@ public class StopDetailsActivity extends AppCompatActivity implements OnTaskComp
 
             if(IS_NORMAL_VIEW){
 
+                /*
+                * Get the prediction that has been clicked
+                * If the precidition does not have a GPS signal we can't track that vehicle
+                * */
+                RealtimePrediction prediction = mStop.getFilteredPredictions(StopDetailsActivity.this).get(position);
+                if(!prediction.isWorking()){
+                    Toast.makeText(StopDetailsActivity.this, "The GPS signal isn't working right now for this vehicle, please try later", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 ArrayList<RealtimePrediction> predictions = new ArrayList<>();
                 predictions.add(mStop.getFilteredPredictions(StopDetailsActivity.this).get(position));
                 MapHelper.getInstance().setMonitoredVehicles(predictions);
@@ -296,33 +303,35 @@ public class StopDetailsActivity extends AppCompatActivity implements OnTaskComp
 
     private void checkPushSent(Alarm alarm){
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( this,  new OnSuccessListener<InstanceIdResult>() {
-            @Override
-            public void onSuccess(InstanceIdResult instanceIdResult) {
-                String newToken = instanceIdResult.getToken();
-
-                Log.d(TAG, "Server token:" + newToken);
-                HugoPreferences.setPushToken(StopDetailsActivity.this,newToken);
-                HugoPreferences.setPushSent(StopDetailsActivity.this, false);
-                SendPushTokenParams params = new SendPushTokenParams(StopDetailsActivity.this);
-                params.setPushToken(newToken);
-                DataRequestTask task = new DataRequestTask(params);
-                task.setOnTaskCompletedListener(result -> {
-                    if(result){
-                        Log.d(TAG, "Token successfully sent to server");
-                        HugoPreferences.setPushSent(StopDetailsActivity.this, true);
-                    }else{
-                        Log.d(TAG, "Token update to hugo servers failed because " + task.getErrorMessage());
-                    }
-                    sendAlarmRequest(alarm);
-                });
-                task.execute(StopDetailsActivity.this);
+        FirebaseInstallations.getInstance().getId().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) {
+                Log.e(TAG, "Fetching FCM registration token failed", task.getException());
+                return;
             }
+
+            // Get new FCM registration token
+            String token = task.getResult();
+            Log.d(TAG, "Server token:" + token);
+            HugoPreferences.setPushToken(StopDetailsActivity.this,token);
+            HugoPreferences.setPushSent(StopDetailsActivity.this, false);
+            SendPushTokenParams params = new SendPushTokenParams(StopDetailsActivity.this);
+            params.setPushToken(token);
+            DataRequestTask dt = new DataRequestTask(params);
+            dt.setOnTaskCompletedListener(result -> {
+                if(result){
+                    Log.d(TAG, "Token successfully sent to server");
+                    HugoPreferences.setPushSent(StopDetailsActivity.this, true);
+                }else{
+                    Log.d(TAG, "Token update to hugo servers failed because " + dt.getErrorMessage());
+                }
+                sendAlarmRequest(alarm);
+            });
+
+            dt.execute(StopDetailsActivity.this);
+
         });
 
     }
-
-
 
     private void sendAlarmRequest(Alarm alarm) {
 

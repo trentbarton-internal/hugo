@@ -176,6 +176,17 @@ public class BusStopItem extends LinearLayout implements OnRefreshDataListener {
             serviceDestination.setText("to " + prediction.getJourneyDestination());
             TextView predictionTime = predictionView.findViewById(R.id.object_realtime_prediction_time);
             predictionTime.setText(prediction.getFormattedPredictionDisplay());
+
+            if(prediction.isCancelledService()){
+                serviceDestination.setText("cancelled");
+                serviceDestination.setTextColor(Color.parseColor("#FF0000"));
+                predictionTime.setTextColor(Color.parseColor("#FF0000"));
+            }else{
+                serviceDestination.setText("to " + prediction.getJourneyDestination());
+                serviceDestination.setTextColor(Color.parseColor("#000000"));
+                predictionTime.setTextColor(Color.parseColor("#000000"));
+            }
+
             mPredictionHolder.addView(predictionView);
 
             if(x == mStop.getFilteredPredictions(getContext()).size() - 1 || x == 2){

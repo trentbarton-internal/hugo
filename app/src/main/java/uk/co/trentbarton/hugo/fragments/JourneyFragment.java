@@ -67,7 +67,7 @@ import uk.co.trentbarton.hugo.tasks.DataRequestTask;
 import uk.co.trentbarton.hugo.tasks.OnInfoReceivedListener;
 import uk.co.trentbarton.hugo.tools.Metrics;
 
-public class JourneyFragment extends MapFragment implements OnFavouritePlaceClickListener, GoogleApiClient.ConnectionCallbacks, OnInfoReceivedListener, GoogleMap.OnMarkerClickListener, OnDataReceivedListener {
+public class JourneyFragment extends MapFragment implements OnFavouritePlaceClickListener, OnInfoReceivedListener, GoogleMap.OnMarkerClickListener, OnDataReceivedListener {
 
     private EditText fromEditText, toEditText;
     private RelativeLayout loadingScreen;
@@ -940,16 +940,6 @@ public class JourneyFragment extends MapFragment implements OnFavouritePlaceClic
 
         Database db = new Database(getContext());
         return db.saveFavouritePlace(place, false);
-
-    }
-
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
 
     }
 

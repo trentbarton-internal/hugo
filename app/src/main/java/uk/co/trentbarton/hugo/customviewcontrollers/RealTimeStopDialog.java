@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
 import androidx.annotation.Nullable;
@@ -248,7 +249,17 @@ public class RealTimeStopDialog extends RelativeLayout implements OnTaskComplete
             ImageView serviceColour = view.findViewById(R.id.object_realtime_prediction_service_colour);
 
             serviceName.setText(p.getServiceName());
-            serviceDestination.setText(p.getJourneyDestination());
+
+            if (p.isCancelledService()) {
+                serviceDestination.setText("cancelled");
+                serviceDestination.setTextColor(Color.parseColor("#FF0000"));
+                predictionTime.setTextColor(Color.parseColor("#FF0000"));
+            } else {
+                serviceDestination.setText("to " + p.getJourneyDestination());
+                serviceDestination.setTextColor(Color.parseColor("#000000"));
+                predictionTime.setTextColor(Color.parseColor("#000000"));
+            }
+
             predictionTime.setText(p.getFormattedPredictionDisplay());
             serviceColour.setBackgroundColor(p.getServiceColour());
 

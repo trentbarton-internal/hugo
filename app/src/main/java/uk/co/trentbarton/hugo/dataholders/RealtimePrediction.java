@@ -53,8 +53,8 @@ public class RealtimePrediction implements Parcelable {
                 atStop = false;
             }
 
-            if(object.has("cancelledService")) {
-                cancelledService = (object.getInt("cancelledService") > 0);
+            if(object.has("cancelled_service")) {
+                cancelledService = object.getBoolean("cancelled_service");
             }else {
                 cancelledService = false;
             }
@@ -411,9 +411,18 @@ public class RealtimePrediction implements Parcelable {
         try{
             String[] parts = this.getPredictionDisplay().split(" ");
             SpannableString text = new SpannableString(this.getPredictionDisplay());
+
             text.setSpan(new StyleSpan(Typeface.BOLD), 0, parts[0].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (isCancelledService()){
+                text.setSpan(new ForegroundColorSpan(Color.parseColor("#FF0000")), 0, parts[0].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+
             text.setSpan(new RelativeSizeSpan(0.7f), parts[0].length(), text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            text.setSpan(new ForegroundColorSpan(Color.parseColor("#444444")), parts[0].length(), text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            if (isCancelledService()){
+                text.setSpan(new ForegroundColorSpan(Color.parseColor("#FF0000")), parts[0].length(), text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else{
+                text.setSpan(new ForegroundColorSpan(Color.parseColor("#444444")), parts[0].length(), text.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
             return text;
         }catch(Exception e){
             return new SpannableString(this.getPredictionDisplay());
