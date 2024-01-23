@@ -16,13 +16,13 @@ repositories {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
+    compileSdk 33
     defaultConfig {
         applicationId "uk.co.trentbarton.hugo"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 62
-        versionName "2.6.0"
+        versionCode 63
+        versionName "2.6.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }

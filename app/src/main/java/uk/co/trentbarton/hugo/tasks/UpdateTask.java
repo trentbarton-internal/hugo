@@ -2,6 +2,9 @@ package uk.co.trentbarton.hugo.tasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
+
 import java.util.ArrayList;
 import uk.co.trentbarton.hugo.dataholders.HttpDataParams.GetStopsParams;
 import uk.co.trentbarton.hugo.dataholders.Stop;
@@ -100,8 +103,7 @@ public class UpdateTask extends AsyncTask<Context, Void, Void> {
                 Database db = new Database(context);
                 final int largestVersionNew = largestVersion;
 
-                Thread t = new Thread();
-                Runnable runnable = new Runnable() {
+                Thread t = new Thread(new Runnable() {
                     @Override
                     public void run() {
                         if(stops.size() <= 10){
@@ -118,8 +120,8 @@ public class UpdateTask extends AsyncTask<Context, Void, Void> {
                                 if(tempList.size() == 10 || i == (stops.size() - 1)){
                                     db.updateStops(tempList);
                                     try {
-                                        t.wait(100); //make the thread wait 100 m/s inbetween adding 10 stops so it doesn't die
-                                    } catch (InterruptedException e) {
+                                        this.wait(100);//make the thread wait 100 m/s inbetween adding 10 stops so it doesn't die
+                                    } catch (Exception e) {
                                         e.printStackTrace();
                                     }
                                     tempList.clear();
@@ -129,7 +131,8 @@ public class UpdateTask extends AsyncTask<Context, Void, Void> {
                             HugoPreferences.setCurrentStopsVersion(context, largestVersionNew);
                         }
                     }
-                };
+                });
+
                 t.start();
             }
 
@@ -139,8 +142,7 @@ public class UpdateTask extends AsyncTask<Context, Void, Void> {
 
         });
 
-
-        task.execute(context);
+        new Handler(Looper.getMainLooper()).post(() -> task.execute(context));
         return null;
 
     }
